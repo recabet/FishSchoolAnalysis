@@ -1001,8 +1001,8 @@ class Pipeline:
                 print(f"Created profile for {method_name} cluster {cluster}")
 
 
-def main ():
-    pipeline = Pipeline("data/fish_school_features.csv", "test",n_components=3)
+def main (data_path, output_dir, n_components):
+    pipeline = Pipeline(data_path, output_dir, n_components)
     
     pipeline.load_and_preprocess_data()
     pipeline.apply_dimensionality_reduction()
@@ -1016,7 +1016,3 @@ def main ():
     pipeline.create_feature_profile_for_clusters("profiles")
     
     print(f"\nAnalysis complete! Results saved to test/")
-
-
-if __name__ == "__main__":
-    main()
