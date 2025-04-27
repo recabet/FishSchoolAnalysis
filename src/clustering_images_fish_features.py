@@ -717,8 +717,10 @@ class Pipeline:
             adjusted_means[adjusted_means == 0] = 1e-10
             diff_from_mean = (cluster_means - overall_means) / adjusted_means
             
+        
             # Create a heatmap
-            plt.figure(figsize=(max(12, len(clean_df.columns) / 2), 8))
+            plt.figure(figsize=(min(max(12, len(clean_df.columns) / 2), 40), 8))
+
             sns.heatmap(diff_from_mean, cmap='coolwarm', center=0,
                         linewidths=.5, cbar_kws={"shrink": .8})
             plt.title(f'Feature Importance Heatmap - {result["name"]}', fontsize=14)
@@ -726,6 +728,8 @@ class Pipeline:
             plt.savefig(os.path.join(os.path.join(self.output_dir, save_dir), f"{method_name}_feature_heatmap.png"),
                         dpi=300, bbox_inches='tight')
             plt.show()
+           
+            
             
             # Feature distribution across clusters
             # Select a subset of features for clarity if there are many

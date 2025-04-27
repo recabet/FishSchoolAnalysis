@@ -1,0 +1,24 @@
+Distinctive Features for K-means Clustering
+------------------------------------------------------------
+
+Cluster 0:
+  segment_1_min_depth: 100.0% lower than average
+  segment_1_edge_density: 96.5% lower than average
+  segment_1_compactness: 88.7% lower than average
+  segment_1_dissimilarity: 87.2% lower than average
+  segment_1_mean_depth: 79.8% higher than average
+
+Cluster 1:
+  segment_0_min_depth: 100.0% lower than average
+  segment_0_edge_density: 96.3% lower than average
+  segment_0_compactness: 88.0% lower than average
+  segment_0_dissimilarity: 86.9% lower than average
+  segment_0_mean_depth: 78.5% higher than average
+
+Cluster 2:
+  segment_2_min_depth: 100.0% lower than average
+  segment_2_edge_density: 96.8% lower than average
+  segment_2_compactness: 89.4% lower than average
+  segment_2_dissimilarity: 87.3% lower than average
+  segment_2_mean_depth: 81.9% higher than average
+

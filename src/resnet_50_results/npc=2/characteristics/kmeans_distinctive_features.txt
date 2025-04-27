@@ -1,0 +1,17 @@
+Distinctive Features for K-means Clustering
+------------------------------------------------------------
+
+Cluster 0:
+  464: 98.9% lower than average
+  339: 97.0% lower than average
+  934: 95.6% lower than average
+  531: 94.0% lower than average
+  1390: 93.9% lower than average
+
+Cluster 1:
+  464: 374.5% higher than average
+  339: 367.4% higher than average
+  934: 362.1% higher than average
+  531: 356.1% higher than average
+  1390: 355.9% higher than average
+

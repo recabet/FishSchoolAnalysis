@@ -1,0 +1,4 @@
+,Silhouette Score (↑),Calinski-Harabasz Score (↑),Davies-Bouldin Score (↓),Stability Score (↑)
+kmeans,0.15137664112979546,405.35949488381243,4.231658978626461,0.9989335252688267
+dbscan,,,,1.0
+hdbscan,,,,

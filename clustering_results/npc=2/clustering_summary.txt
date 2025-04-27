@@ -1,0 +1,29 @@
+Fish School Clustering Analysis Summary
+=====================================
+
+Overview of Methods:
+- KMEANS
+- DBSCAN
+- HDBSCAN
+
+Performance Metrics (↑ = higher is better, ↓ = lower is better):
+         Silhouette Score (↑)  Calinski-Harabasz Score (↑)  Davies-Bouldin Score (↓)  Stability Score (↑)
+kmeans               0.329961                  3970.455336                  1.308908             1.000000
+dbscan               0.332234                  3998.018683                  1.301361             0.999863
+hdbscan              0.345132                  3915.245856                  1.259907             1.000000
+
+Best Method Per Metric:
+- Best Silhouette Score: hdbscan (0.3451)
+- Best Calinski-Harabasz Score: dbscan (3998.0187)
+- Best Davies-Bouldin Score: hdbscan (1.2599)
+- Best Stability Score: kmeans (1.0000)
+
+Overall recommended clustering method: HDBSCAN
+
+Recommendation rationale:
+The HDBSCAN method provides best separation between clusters, lowest average similarity between clusters.
+
+Cluster Distribution Summary:
+- KMEANS: 3 clusters, no outliers
+- DBSCAN: 3 clusters, 109 outliers (1.0%)
+- HDBSCAN: 3 clusters, 1065 outliers (9.7%)
