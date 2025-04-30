@@ -1,32 +1,24 @@
 import os
 import cv2
 import pandas as pd
+import numpy as np
+from tqdm import tqdm
 
-img_dir = "../data/image"
-output_csv = "../data/flattened_image.csv"
+img_dir = "../data/black_resized_croped_images"
+data = []
+df = pd.DataFrame()
 
-# Initialize CSV with header for the first image
-first_image = True
-
-for image_name in os.listdir(img_dir):
+for image_name in tqdm(os.listdir(img_dir), desc="Processing images"):
     image_path = os.path.join(img_dir, image_name)
     image_arr = cv2.imread(image_path)
 
-    if image_arr is None:
-        print(f"Warning: Could not load image {image_name}. Skipping.")
-        continue
-
-    # Resize to (1000x86) as (width, height)
-    resized = cv2.resize(image_arr, (1000, 86))
+    # Convert to black and white (grayscale)
+    gray_image = cv2.cvtColor(image_arr, cv2.COLOR_BGR2GRAY)
 
     # Flatten to 1D vector
-    flat = resized.flatten()
+    flat = gray_image.astype(np.float32).flatten()
 
-    # Create a DataFrame for a single image
-    df = pd.DataFrame([flat])
+    data.append(flat)
 
-    # Write the header only once
-    df.to_csv(output_csv, mode='w' if first_image else 'a', index=False, header=first_image)
-    first_image = False
-
-print("All images processed and written to CSV incrementally.")
+df = pd.DataFrame(data)
+df.to_csv("../data/black_flattened_image.csv", index=False)
